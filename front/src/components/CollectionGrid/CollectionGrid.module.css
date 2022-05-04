@@ -1,0 +1,50 @@
+.collectionCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 22px;
+	font-weight: bold;
+	color: rgb(0, 0, 0) !important;
+	/* height: 28rem; */
+	background-size: contain;
+	background-repeat: round;
+	position: relative;
+}
+
+.collectionCard:hover {
+	transform: scale(1.02);
+}
+
+.collection1 {
+	background-image: linear-gradient(to left, rgba(137, 133, 133, 0.1) 0%, rgb(92, 90, 93) 100%),
+		url('../../../public/images/MMFvehicle.jpg');
+}
+
+.collection2 {
+	background-image: linear-gradient(to left, rgba(137, 133, 133, 0.1) 0%, rgb(92, 90, 93) 100%),
+		url('../../../public/images/egyptian.jpg');
+}
+
+.collection3 {
+	background-image: linear-gradient(to left, rgba(137, 133, 133, 0.1) 0%, rgb(92, 90, 93) 100%),
+		url('../../../public/images/forgeWorldC.jpeg');
+}
+
+.collection4 {
+	background-image: linear-gradient(to left, rgba(137, 133, 133, 0.1) 0%, rgb(92, 90, 93) 100%),
+		url('../../../public/images/dreadsC.jpeg');
+}
+
+.collectionButton {
+	background-color: #0d0202 !important;
+	color: #f0e4e4 !important;
+	border: 1px solid #090202 !important;
+	font-weight: bold;
+	max-width: 50px;
+}
+
+.collectionButton:hover {
+	background-color: #8583835d !important;
+	color: #110202 !important;
+	border: 1px solid #010000;
+}

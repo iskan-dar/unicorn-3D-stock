@@ -1,0 +1,35 @@
+.catalogCardItemButton {
+	background-color: #FFFFFF !important;
+	color: #374151;
+	border: 1px solid #FFFFFF !important;
+	font-weight: bold;
+
+}
+
+.catalogCardItemButton:hover {
+	background-color: #FFFFFF00 !important;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+}
+
+.catalogCardItemButtonGroup {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+.catalogCardItemContainer {
+	max-width: 300px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 1px 2px rgb(15 11 11 / 84%);
+    border-radius: 3px;
+}
+
+.catalogCardItemContainer:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.catalogCardItem {
+	position: relative;
+}

@@ -1,0 +1,91 @@
+.orderItem {
+    width: 876px;
+    height: 125px;
+    background: #2C2C34;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 10px;
+    /*align-items: center;*/
+}
+
+/*.cartPicture {*/
+/*    width: 150px;*/
+/*    height: 105px;*/
+/*    margin: 10px;*/
+/*}*/
+
+.orderPicture {
+    position: relative;
+    width: 150px;
+    height: 105px;
+    border-radius: 4px;
+    /*margin: 10px;*/
+    overflow: hidden;
+}
+
+.orderCount {
+    width: 34px;
+    height: 24px;
+    align-items: center;
+    padding: 4px 8px;
+
+    position: absolute;
+    z-index: 999;
+    top: 65px;
+    left: 90px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.orderStatus {
+    margin-top: 21px;
+    margin-left: 11px;
+}
+
+.orderIcons {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.circleIcon {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circleDisable {
+    width: 40px;
+    height: 40px;
+     background: #1E1F24;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statusText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #959EAD;
+    margin-left: 15px;
+}
+
+.pictureOrder {
+    position: relative;
+    width: 150px;
+    height: 105px;
+    border-radius: 4px;
+    margin: 10px;
+    overflow: hidden;
+}

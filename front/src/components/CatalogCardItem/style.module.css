@@ -1,0 +1,39 @@
+.catalogCardItemButton {
+	background-color: #FFFFFF !important;
+	color: #374151;
+	border: 1px solid #FFFFFF !important;
+	font-weight: bold;
+}
+
+.catalogCardItemButton:hover {
+	background-color: #FFFFFF00 !important;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+}
+
+.catalogCardItemButtonGroup {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+.catalogCardItemPriceLabel {
+	background-color: #FFFFFF !important;
+	color: #374151;
+	border: 1px solid #FFFFFF !important;
+	font-weight: bold;
+}
+
+.catalogCardItemContainer {
+	max-width: 300px;
+}
+
+.catalogCardItemContainer:hover {
+	cursor: pointer;
+	transform: scale(1.04);
+}
+
+.catalogCardItem {
+	position: relative;
+	margin-bottom: 15px;
+}

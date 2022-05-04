@@ -1,0 +1,24 @@
+.tagComponentTagCard {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	margin-right: 10px;
+	padding-left: 14px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	color: #2C2C34;
+	font-weight: 600;
+}
+
+.tagComponentTagCloseIcon {
+	color: #0054FF !important;
+}
+
+.tagComponentTagCloseIcon:hover {
+	color: #003193 !important;
+}
+
+.tagComponentTagName {
+	position: relative;
+	top: 10px;
+}

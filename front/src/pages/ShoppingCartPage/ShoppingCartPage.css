@@ -1,0 +1,152 @@
+.shoppingCardContainer {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.shoppingCardTitle {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 52px;
+	letter-spacing: 0.2px;
+	color: #FFFFFF;
+}
+
+.cartActions {
+	margin-top: 30px;
+	width: 1248px;
+	height: 56px;
+	background: #1E1F24;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.cartActionsItem {
+	margin-left: 20px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	color: #959EAD;
+}
+
+.activeActionsItem {
+	color: #FFFFFF;
+}
+
+.circleActionsItem {
+	width: 20px;
+	height: 20px;
+	background: #141517;
+	mix-blend-mode: normal;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.activeCircle {
+	background: #0054FF;
+	color: white;
+}
+
+.shoppingCartContent {
+	width: 1248px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.shoppingList {
+	width: 868px;
+	background: #1E1F24;
+	mix-blend-mode: normal;
+	border-radius: 8px;
+}
+
+.orderSummary {
+	width: 350px;
+	height: 401px;
+	left: 994px;
+	top: 379px;
+	background: #1E1F24;
+	border-radius: 8px;
+}
+
+.orderSummaryContent {
+	margin: 20px;
+
+}
+
+.orderSummaryHeader {
+	margin: 0 0 15px 0;
+	padding: 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+}
+
+.orderPrice {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 11px 0;
+}
+
+.boltPrice {
+	color: #FFFFFF;
+}
+
+.orderPrice {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #959EAD;
+}
+
+.bolt p {
+	color: #FFFFFF;
+}
+
+p {
+	margin: 0
+}
+
+.nodeOrderTitle {
+	margin: 11px 0 9px 0;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: #959EAD;
+}
+
+.noteOrderArea {
+	width: 300px;
+	height: 128px;
+	background: #F9FAFB;
+	border-radius: 8px;
+}
+
+.proceed {
+	margin-top: 20px;
+	background: #0054FF;
+	border-radius: 4px;
+	color: #FFFFFF;
+	width: 310px;
+	height: 48px;
+}
+
+.proceed:hover {
+	background: #0040c1;
+	cursor: pointer;
+}
+
+.proceed:active {
+	background: #FFFFFF;
+	color: #0054FF;
+}

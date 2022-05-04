@@ -1,0 +1,65 @@
+.editInput {
+    width: 326px;
+    height: 48px;
+    border: 1px solid #2C2C34;
+    border-radius: 8px;
+    background: #1E1F24;
+}
+
+.labelInput {
+    margin-top: 30px;
+    /*width: 356px;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.editItems {
+    display: grid;
+    grid-template-columns: 360px 360px;
+}
+
+.labelInput label {
+    margin-bottom: 8px;
+}
+
+.labelInput input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #959EAD;
+    padding-left: 14px;
+}
+
+.saveProfile {
+    width: 128px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.avatarButtonImg {
+   size: inherit;
+    margin-right: 5px;
+}
+
+.buttonFlag {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+input[type=file]::file-selector-button {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+input[type=file]::file-selector-button:hover {
+    color: #0054FF;
+    background: #FFFFFF;
+    text-decoration: none;
+}
+
+#inputAvatar {
+    margin-top: 10px;
+}

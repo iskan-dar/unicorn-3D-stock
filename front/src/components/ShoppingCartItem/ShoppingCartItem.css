@@ -1,0 +1,117 @@
+.ShoppingCartItem {
+	margin: 20px 18px 10px 24px;
+	border-radius: 5px;
+	width: 820px;
+	height: 125px;
+	display: flex;
+	align-items: center;
+}
+
+.ShoppingCartItem:hover {
+	background-color: #73737342
+}
+
+.cartPicture {
+	width: 150px;
+	height: 105px;
+	margin: 10px;
+	border: 2px solid #FFFFFF00;
+}
+
+.cartPicture:hover {
+	cursor: pointer;
+	border: 2px solid #FFFFFF;
+}
+
+.cartInformation {
+	margin: 10px 20px 10px 10px;
+	justify-content: space-between;
+	width: 500px;
+}
+
+.cartTitle {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+	margin: 9px;
+}
+
+.cartDescription {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #959EAD;
+	margin: 9px;
+}
+
+.cartItemPrice {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	color: #FFFFFF;
+	margin: 9px;
+}
+
+.cartFunctionalIcon {
+	margin: 10px;
+}
+
+.countFunctional {
+	width: 146px;
+	height: 44px;
+	left: 794px;
+	top: 399px;
+	background: #0F1011;
+	border: 2px solid #1F2937;
+	box-sizing: border-box;
+	border-radius: 6px;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.catrMinus {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+
+.catrMinus:hover {
+	cursor: pointer;
+}
+
+.cartPlus:hover {
+	cursor: pointer;
+}
+
+.otherIcon {
+	margin: 6px 6px 0 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.delIcon {
+	margin-right: 6px;
+	width: 70px;
+	height: 44px;
+	left: 794px;
+	top: 449px;
+
+	background: #0F1011;
+	border: 2px solid #1F2937;
+	box-sizing: border-box;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.delIcon:hover {
+	cursor: pointer;
+
+}

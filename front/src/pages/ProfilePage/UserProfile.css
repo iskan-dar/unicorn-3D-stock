@@ -1,0 +1,222 @@
+.profileContainer {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profileTitle {
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 52px;
+	letter-spacing: 0.2px;
+	color: #FFFFFF;
+}
+
+.profileContent {
+	margin-top: 30px;
+	display: flex;
+	width: 1248px;
+	min-height: 664px;
+	left: 96px;
+	top: 293px;
+	background-color: #1e1f24;
+	border-radius: 8px;
+}
+
+.profileInfo {
+	width: 290px;
+	border-right: 1px solid #2c2c34;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.avatar {
+	width: 170px;
+	height: 170px;
+	margin-top: 30px;
+	border-radius: 99px;
+	background: #0054FF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 90%;
+}
+
+.profileName {
+	margin-top: 20px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.profileEmail {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	letter-spacing: 0.2px;
+	color: #959EAD;
+}
+
+.profileButton {
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonEdit {
+	width: 238px;
+	height: 48px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 4px;
+
+	top: calc(50% - 22px/2);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	color: #0054FF;
+	background: #FFFFFF;
+	transition: 1s;
+}
+
+.buttonAdd {
+	width: 238px;
+	height: 48px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 4px;
+
+	top: calc(50% - 22px/2);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #0054FF;
+	transition: 1s;
+}
+
+.buttonEdit:active {
+	color: #ffffff;
+	background: #0054FF;
+	text-decoration: none;
+}
+
+.buttonEdit:hover {
+	cursor: pointer;
+	background: #c5c5c5;
+}
+
+.buttonAdd:active {
+	color: #0054FF;
+	background: #FFFFFF;
+}
+
+.userFlagButton {
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonFlag {
+	width: 238px;
+	height: 48px;
+	margin-top: 10px;
+	border-radius: 4px;
+	color: #ffffff;
+	background: #0054FF;
+}
+
+.buttonFlag:active {
+	color: #0054FF;
+	background: #FFFFFF;
+	text-decoration: none;
+}
+
+.buttonFlag:hover {
+	background: #0045cf;
+	cursor: pointer;
+}
+
+.buttonLogout {
+	width: 238px;
+	height: 48px;
+	margin-top: 10px;
+	border-radius: 4px;
+	border: none;
+	color: #959EAD;
+	background: #1E1F24;
+}
+
+.buttonLogout:hover {
+	color: #ffffff;
+	background: #0054FF;
+	cursor: pointer;
+}
+
+.buttonLogout:active {
+	color: #0054FF;
+	background: #FFFFFF;
+	text-decoration: none;
+}
+
+.profileActions {
+	margin-left: 40px;
+}
+
+.actionsNavigations {
+	width: 876px;
+	margin-top: 40px;
+	display: flex;
+
+}
+
+.actionsItem {
+	margin-right: 30px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 24px;
+	letter-spacing: 0.2px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.actionsItem:hover {
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+.addListing {
+	justify-content: space-between;
+	align-items: center;
+}
+
+Link:active {
+	text-decoration: none;
+}
+
+.linkButton {
+	text-decoration: none;
+}
+
+.itemProfileContent {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.2px;
+	color: #FFFFFF;
+	margin-top: 30px;
+	padding: 10px;
+}

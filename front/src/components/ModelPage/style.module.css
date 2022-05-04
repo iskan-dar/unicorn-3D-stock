@@ -1,0 +1,130 @@
+.myMainContainer {
+	color: #FFFFFF;
+	margin-top: 50px;
+	margin-bottom: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.modelPageAddToCartButton {
+	flex-grow: 1;
+	background-color: #0054FF;
+	border: 1px solid #0054FF !important;
+	color: #FFFFFF !important;
+}
+
+.modelPageAddToCartButton:hover {
+	border: 1px solid #0054FF !important;
+	color: #FFFFFF !important;
+}
+
+.falseAddToFavorite {
+	background-color: #FFFFFF !important;
+	border: 1px solid #FFFFFF !important;
+	color: #0054FF !important;
+}
+
+/* .falseAddToFavorite:hover {
+	background-color: #FFFFFF00 !important;
+	border: 1px solid #075fd2 !important;
+	color: #de0000 !important;
+} */
+
+.trueAddToFavorite {
+	background-color: #FFFFFF !important;
+	border: 1px solid #0054FF !important;
+	color: #0054FF !important;
+}
+
+.modelPageBuyButton {
+	max-width: 100%;
+	width: 534px;
+	height: 60px;
+	font-weight: 700;
+	font-size: 16px !important;
+	color: #0054FF !important;
+	border: 1px solid #FFFFFF !important;
+	background-color: #FFFFFF !important;
+	margin-bottom: 25px !important;
+}
+
+.modelPageBuyButton:hover {
+	color: #FFFFFF !important;
+	background-color: #FFFFFF00 !important;
+	border: 1px solid #FFFFFF;
+}
+
+.modelPageMainImg {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.modelPageCarouselBtn {
+	border: 2px solid #1F2937 !important;
+	border-radius: 5px !important;
+	width: 40px !important;
+	height: 102px;
+	color: inherit !important;
+}
+
+.modelPageCarouselBox {
+	width: 100%;
+	height: 102px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modelPageDescriptionTitle {
+	font-weight: bold !important;
+	font-size: 16px !important;
+	margin: 50px 0px 15px 0px !important;
+}
+
+.modelPageModelTitle {
+	font-size: 24px !important;
+	font-weight: bold !important;
+	word-spacing: 4px !important;
+	margin-bottom: 16px !important;
+}
+
+.modelPageModelTotalCost {
+	margin-bottom: 40px !important;
+}
+
+.modelPageModelBuyDigital {
+	background-color: #1F2937 !important;
+	color: #FFFFFF !important;
+	height: 222px !important;
+	margin-bottom: 40px !important;
+}
+
+.modelPageModelBuyDigitalBtn {
+	display: flex;
+	justify-content: center;
+}
+
+.modelPageSelect {
+	border: 2px solid #1F2937 !important;
+	color: #FFFFFF !important;
+}
+
+.modelPageCounter {
+	width: 146px !important;
+	height: 45px !important;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 2px solid #1F2937 !important;
+	border-radius: 5px !important;
+	margin: 15px 0 40px 0 !important;
+}
+
+.modelPageAlsoBuyBox {
+	width: 100% !important;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 30px !important;
+}
