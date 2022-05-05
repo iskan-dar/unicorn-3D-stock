@@ -35,6 +35,7 @@ import {
 } from '../../redux/actions/wishAC';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import ViewPort from '../ViewPort/ViewPort';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -199,6 +200,7 @@ export default function ModelPage() {
 		// navigate('/')
 	};
 
+
 	return (
 		<Container className={styles.myMainContainer} maxWidth="xl">
 			<Box sx={{
@@ -211,7 +213,8 @@ export default function ModelPage() {
 
 					{/* ОСНОВНОЕ ФОТО */}
 					<Box className={styles.modelPageMainImg}>
-						{mainPhotoRender(photosArr)}
+						{/* {mainPhotoRender(photosArr)} */}
+						<div style={{width: "500px", height: "500px"}}><ViewPort/></div>
 					</Box>
 
 					{/* МИНИАТЮРЫ ФОТО */}
