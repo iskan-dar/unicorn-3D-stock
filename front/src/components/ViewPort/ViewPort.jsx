@@ -10,7 +10,7 @@ const ViewPort = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color( "#141517" )
-    const camera = new THREE.PerspectiveCamera( 75, 500/500, 0.1, 1000 );
+    const camera = new THREE.PerspectiveCamera( 20, 500/500, 0.1, 1000 );
     const renderer = new THREE.WebGLRenderer();
     const controls = new OrbitControls( camera, renderer.domElement );
 
@@ -35,7 +35,7 @@ const ViewPort = () => {
 
     const loader = new STLLoader()
         loader.load(
-        '/Skeleton5.stl',
+        '/Full test.stl',
         function (geometry) {
             const mesh = new THREE.Mesh(geometry, material)
 
@@ -52,7 +52,10 @@ const ViewPort = () => {
             animate();
         }
     )
-    camera.position.z = 150;
+
+    console.log(loader)
+
+    camera.position.z = 350;
     return () => mountRef.current.removeChild( renderer.domElement);
   }, []);
 
