@@ -7,6 +7,7 @@ import {getCatalogItems} from "../../redux/actions/catalogAC";
 import {getUserWishes} from "../../redux/actions/wishAC";
 
 const WishListPage = () => {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     const catalogItems = useSelector((store) => store.catalogItems);
     const user = useSelector((store) => store.user);
@@ -32,7 +33,7 @@ const WishListPage = () => {
                 </div>
             </div>
             <Box className="sortedByCategories">
-                { resultList.map((item) => (
+                { resultList && resultList.map((item) => (
                     <SearchItem key={item.id} item={item} />
                 ))}
             </Box>

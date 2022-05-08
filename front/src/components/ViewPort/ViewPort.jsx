@@ -11,10 +11,10 @@ const ViewPort = () => {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color( "#141517" )
     const camera = new THREE.PerspectiveCamera( 20, 500/500, 0.1, 1000 );
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     const controls = new OrbitControls( camera, renderer.domElement );
 
-    renderer.setSize( 500, 500 );
+    renderer.setSize( 700, 700 );
     mountRef.current.appendChild( renderer.domElement );
 
     const light2 = new THREE.DirectionalLight( 0xffffff );
@@ -29,7 +29,7 @@ const ViewPort = () => {
         scene.add( light4 );
 
     const material = new THREE.MeshPhongMaterial({
-        color: "#d3d3d3",    // red (can also use a CSS color string here)
+        color: "#a6a6a6",    // red (can also use a CSS color string here)
         flatShading: true,
       });
 
@@ -56,7 +56,7 @@ const ViewPort = () => {
     console.log(loader)
 
     camera.position.z = 350;
-    return () => mountRef.current.removeChild( renderer.domElement);
+    return () => mountRef?.current?.removeChild( renderer.domElement);
   }, []);
 
   return (
