@@ -84,7 +84,10 @@ export default function PrimaryAppBar() {
   }, [searchInput, categs, dispatch])
 
   React.useEffect(() => {
-    dispatch(getUserWishes(user.id))
+    if (user.id) {
+      dispatch(getUserWishes(user.id))
+      console.log("Shtuka kotoruy mi ishem", user.id)
+    }
   }, [dispatch, user.id]);
 
   React.useEffect(() => {

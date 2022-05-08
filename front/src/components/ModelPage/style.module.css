@@ -113,8 +113,10 @@
 }
 
 .modelPageCounter {
+	color: #FFFFFF !important;
 	width: 146px !important;
 	height: 45px !important;
+	background-color: #141517 !important;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -129,4 +131,10 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-top: 30px !important;
+}
+
+.attrBox {
+	background-color: #1F2937;
+	padding: 23px;
+	border-radius: 12px;
 }

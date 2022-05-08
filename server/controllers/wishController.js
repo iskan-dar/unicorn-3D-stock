@@ -2,12 +2,7 @@ const Models = require('../db/models');
 
 module.exports.getUserWishlist = async (req, res) => {
 	try {
-		const { userId } = req.params;
-		console.log('{{{{getUserWishlist userId}}}}}', userId);
-        
-		// eslint-disable-next-line use-isnan
-		if (userId === 'nan') return res.sendStatus(500);
-
+		const { userId } = req.params;        
 		const result = await Models.WishList.findAll({ where: { userId: +userId } });
 		res.json(result);
 	} catch (error) {
