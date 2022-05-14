@@ -44,3 +44,6 @@ export const REMOVE_WISH = 'REMOVE_WISH';
 export const FIRST_CATEG = 'FIRST_CATEG';
 export const SUB_CATEG = 'SUB_CATEG';
 
+export const LOAD_STL = 'LOAD_STL';
+export const DEL_STL = 'DEL_STL';
+

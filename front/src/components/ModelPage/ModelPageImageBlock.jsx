@@ -20,8 +20,21 @@ export default function ModelPageImageBlock() {
 
   const photosArr = model["Photos.photoUrl"];
 
+  if (photosArr) {
+    if (!photosArr.find((el) => el === 'eye.svg')) {
+      photosArr.push('eye.svg')
+    }
+  }
+
+  console.log(photosArr)
+
   // PHOTO-SLIDER
   const mainPhotoRender = (array) => {
+    console.log('activeActions===>',activeActions)
+    if (array?.[`${activeActions}`] === 'eye.svg') {
+      return <ViewPort/>
+    }
+
     if (activeActions < 0) {
       setActiveActions(array?.length - 1);
       return array?.[`${activeActions}`] ? (
@@ -72,10 +85,12 @@ export default function ModelPageImageBlock() {
   return (
     <Container>
       <Box className={styles.modelPageMainImg}>
-        {/* {mainPhotoRender(photosArr)} */}
-        <div style={{ width: "700px", height: "700px" }}>
+        
+        {mainPhotoRender(photosArr)}
+        
+        {/* <div style={{ width: "700px", height: "700px" }}>
         <ViewPort />
-        </div>
+        </div> */}
       </Box>
 
       {/* МИНИАТЮРЫ ФОТО */}
@@ -93,7 +108,7 @@ export default function ModelPageImageBlock() {
             ? photosArr.map((el) => (
                 <Box key={el}>
                   <img
-                    style={{ width: "100%", height: "105px" }}
+                    style={{ width: "105px", height: "105px", objectFit: 'cover' }}
                     src={"http://localhost:4000/" + el}
                     alt="here"
                     loading="lazy"

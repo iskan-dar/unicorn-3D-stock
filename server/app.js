@@ -28,10 +28,30 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(fileUpload({}));
 
 app.use(cookieParser());
+
+app.use(function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Credentials', 'true');
+	res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+	res.header('Access-Control-Expose-Headers', 'Content-Length');
+	res.header('Access-Control-Allow-Headers', 'Accept, Authorization, Content-Type, X-Requested-With, Range');
+	if (req.method === 'OPTIONS') {
+	return res.send(200);
+	} else {
+	return next();
+	}
+	}); 
+
+// app.use(cors({
+// 	credentials: true,
+// 	origin: ['http://localhost:3000', 'http://localhost:4000', process.env.CLIENT_URL],
+// }));
+
 app.use(cors({
-	credentials: true,
-	origin: ['http://localhost:3000', process.env.CLIENT_URL],
-}));
+	allowedHeaders: ['Content-Type'],
+	origin: ["http://localhost:4000","http://localhost:3000"],
+	preflightContinue: true
+	})); 
 
 // routers
 app.use('/auth', authRouter);

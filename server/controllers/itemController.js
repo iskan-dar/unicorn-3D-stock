@@ -10,17 +10,19 @@ const {
 	SubCategory,
 	ItemsAndTag,
 	PhysicalCopy,
+	PreviewModel,
 } = require('../db/models');
 
 module.exports.addItem = async (req, res, next) => {
 	console.log(
 		'<<<<<<<addItem REQ.BODY REQ.FILES>>>>>>>',
 		req.body,
-		req.files,
 	);
 
 	try {
-		const { zip, photos } = req.files;
+		const { zip, photos, stl } = req.files;
+
+		// console.log(stl)
 
 		const photoNames = [];
 		if (Array.isArray(photos)) {
@@ -38,16 +40,31 @@ module.exports.addItem = async (req, res, next) => {
 		const zipNames = [];
 		if (Array.isArray(zip)) {
 			zip.forEach((oneZip) => {
-				const zipName = uuid.v4() + '.jpg';
+				const zipName = uuid.v4() + '.zip';
 				oneZip.mv(
-					path.resolve(__dirname, '..', 'static', uuid.v4() + '.zip'),
+					path.resolve(__dirname, '..', 'static/archives/', zipName),
 				);
 				zipNames.push(zipName);
 			});
 		} else {
-			const zipName = uuid.v4() + '.jpg';
-			zip.mv(path.resolve(__dirname, '..', 'static', uuid.v4() + '.zip'));
+			const zipName = uuid.v4() + '.zip';
+			zip.mv(path.resolve(__dirname, '..', 'static/archives/', zipName));
 			zipNames.push(zipName);
+		}
+
+		const stlNames = [];
+		if (Array.isArray(stl)) {
+			stl.forEach((oneStl) => {
+				const stlName = uuid.v4() + '.stl';
+				oneStl.mv(
+					path.resolve(__dirname, '..', 'static/previewStl/', stlName),
+				);
+				stlNames.push(stlName);
+			});
+		} else {
+			const stlName = uuid.v4() + '.stl';
+			stl.mv(path.resolve(__dirname, '..', 'static/previewStl/', stlName));
+			stlNames.push(stlName);
 		}
 
 		const category = await Category.findOne({
@@ -122,7 +139,14 @@ module.exports.addItem = async (req, res, next) => {
 		zipNames.forEach(async (zipName) => {
 			await File.create({
 				itemId: newItem.dataValues.id,
-				photoUrl: zipName,
+				fileUrl: zipName,
+			});
+		});
+
+		stlNames.forEach(async (stlName) => {
+			await PreviewModel.create({
+				itemId: newItem.dataValues.id,
+				previewModelLink: stlName,
 			});
 		});
 
@@ -196,6 +220,10 @@ module.exports.getOneItem = async (req, res, next) => {
 					attributes: ['photoUrl'],
 				},
 				{
+					model: PreviewModel,
+					attributes: ['previewModelLink'],
+				},
+				{
 					model: PhysicalCopy,
 					attributes: ['scale', 'color', 'price'],
 					required: true,
@@ -208,6 +236,8 @@ module.exports.getOneItem = async (req, res, next) => {
 			],
 			raw: true,
 		});
+
+		console.log('item==========>', item)
 
 		const photoArr = item.map((el) => el['Photos.photoUrl']).filter((el, i, a) => a.indexOf(el) === i);
 		const tagArr = item.map((el) => el['Tags.ItemsAndTags.tagId']).filter((el, i, a) => a.indexOf(el) === i);
@@ -239,3 +269,4 @@ module.exports.getAllItems = async (req, res, next) => {
 		next(error);
 	}
 };
+
