@@ -9,6 +9,7 @@ import styles from './style.module.css';
 import ModelPageImageBlock from './ModelPageImageBlock';
 import ModelPageForm from './ModalPageForm';
 import ModelPageCustomersAlsoBought from './ModelPageCustomersAlsoBought';
+import CarouselBox from './ModelPageImageBlock/CarouselBox'
 
 export default function ModelPage() {
     const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export default function ModelPage() {
                     justifyContent: 'space-between',
                 }}
             >
-                <ModelPageImageBlock />
+                <CarouselBox />
                 <ModelPageForm model={model} user={user} />
             </Box>
             <ModelPageCustomersAlsoBought id={id} />

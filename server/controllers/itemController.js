@@ -233,6 +233,11 @@ module.exports.getOneItem = async (req, res, next) => {
 					attributes: [['id', 'tagId'], 'tagName'],
 					// required: true,
 				},
+				{
+					model: PreviewModel,
+					attributes: ['previewModelLink'],
+					// required: true,
+				},
 			],
 			raw: true,
 		});
