@@ -56,7 +56,8 @@
 }
 
 .modelPageMainImg {
-	width: 100%;
+	width: 700px;
+	height: 700px;
 	margin-bottom: 20px;
     display: flex;
     justify-content: center;

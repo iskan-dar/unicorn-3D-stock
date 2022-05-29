@@ -21,6 +21,7 @@ import style from './style.module.css';
 import TagComponent from '../TagComponent/TagComponent';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { display } from '@mui/system';
 
 const theme = createTheme({
 	components: {
@@ -72,6 +73,9 @@ function EditListing() {
 	// UPLOAD ARCHIVE
 	const [zipInput, setZipInput] = useState(null);
 	const [zip, setZip] = useState([]);
+
+	const [stlInput, setStlInput] = useState(null);
+	const [stl, setStl] = useState([]);
 	// console.log(zip);
 	const photosHandler = (event) => {
 		// console.log(event.target.files);
@@ -96,6 +100,20 @@ function EditListing() {
 		setZipInput(event.target.files[0].name ?? '');
 	};
 
+
+	const previewStlHandler = (event) => {
+		// console.log(event.target.files);
+		const stlArr = Array.from(event.target.files)
+		setStl((prev) => {
+			if (prev.length) {
+				return Array.from([...prev, ...stlArr]);
+			} else {
+				return Array.from([...stlArr])
+			}
+		});
+		setStlInput(event.target.files[0].name ?? '');
+	};
+
 	const inputsHandler = (event) => {
 
 		setInputs((prev) => ({
@@ -116,13 +134,14 @@ function EditListing() {
 		formData.append('title', inputs.title);
 		formData.append('digitalPrice', inputs.priceForDigital);
 		formData.append('category1', (inputs.category1)?.toLowerCase());
-		formData.append('category2', inputs.category2);
+		formData.append('category2', (inputs.category2)?.toLowerCase());
 		formData.append('description', inputs.description);
 		formData.append('scale', inputs.scale);
 		formData.append('color', inputs.color);
 		tags.forEach((tag) => formData.append('tags', tag.tagTitle));
 		_.forEach(zip, oneZip => formData.append('zip', oneZip))
 		_.forEach(photos, photo => formData.append('photos', photo))
+		_.forEach(stl, oneStl => formData.append('stl', oneStl))
 
 		axios
 			.post('http://localhost:4000/items/new', formData, {
@@ -142,6 +161,8 @@ function EditListing() {
 		setPreview([]);
 		setZip({});
 		setZipInput({});
+		setStl({});
+		setStlInput({});
 		navigate('/')
 	};
 
@@ -149,6 +170,10 @@ function EditListing() {
 		display: 'none',
 	});
 	const InputPhoto = styled('input')({
+		display: 'none',
+	});
+
+	const InputStl = styled('input')({
 		display: 'none',
 	});
 
@@ -221,7 +246,7 @@ function EditListing() {
 						<Typography className={style.editListingSecondaryTitle}>
 							Files
 						</Typography>
-
+						{/* download zip without support */}
 						<Box className={style.editListingInputAndButton}>
 							<TextField
 								placeholder="Please upload file pack without supports"
@@ -267,6 +292,55 @@ function EditListing() {
 								Delete File
 							</Button>
 						</Box>
+						{/* download preview stl */}
+
+						<Box className={style.editListingInputAndButton}>
+							<TextField
+								placeholder="Please upload builded stl model"
+								disabled
+								size="small"
+								sx={{ width: '330px', height: 'inherit' }}
+							/>
+
+							<label htmlFor="stl-file">
+								<InputStl
+									accept=".stl"
+									id="stl-file"
+									multiple
+									type="file"
+									name="stl"
+									onChange={previewStlHandler}
+								/> &nbsp;
+								<Button variant="contained" component="span">
+									<FileDownloadIcon />
+									Select File
+								</Button>
+							</label>
+						</Box>
+
+						<Box className={style.editListingInputAndButton}>
+							<TextField
+								disabled
+								size="small"
+								sx={{ width: '330px', height: 'inherit', bgcolor: 'white', borderRadius: '8px' }}
+								onChange={previewStlHandler}
+								value={stlInput ?? ''}
+							/> &nbsp;
+							<Button
+								variant="contained"
+								component="label"
+								sx={{ height: 'inherit' }}
+								onClick={() => {
+									setZipInput(null);
+									setZip({});
+								}}
+							>
+								<DeleteOutlineOutlinedIcon />
+								Delete File
+							</Button>
+						</Box>
+
+						{/* Price for digital files */}
 
 						<Typography className={style.editListingCommonTitle}>
 							Price for digital files

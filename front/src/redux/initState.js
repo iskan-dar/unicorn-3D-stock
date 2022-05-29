@@ -9,6 +9,7 @@ const initState = {
     wishes: [],
 	makerOrders: [],
     categs: {},
+	stl: null,
 };
 
 export default initState;

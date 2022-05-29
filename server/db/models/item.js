@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 				otherKey: 'tagId',
 			});
 			this.hasMany(models.PhysicalCopy, { foreignKey: 'itemId' });
+			this.hasMany(models.PreviewModel, { foreignKey: 'itemId' });
 		}
 	}
 	Item.init({

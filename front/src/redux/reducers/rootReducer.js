@@ -9,6 +9,7 @@ import catalogReducer from './catalogReducer';
 import wishReducer from './wishReduser';
 import makerOrdersReducer from "./makerOrdersReducer";
 import categsReducer from './categsReducer';
+import loadStlReducer from './loadStlReducer';
 
 const rootReducer = combineReducers({
 	user: userReducer,
@@ -21,6 +22,8 @@ const rootReducer = combineReducers({
     wishes: wishReducer,
 	makerOrders: makerOrdersReducer,
     categs: categsReducer,
+	stl: loadStlReducer,
+
 });
 
 export default rootReducer;

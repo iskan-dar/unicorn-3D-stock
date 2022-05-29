@@ -14,7 +14,7 @@ const rootContainer = document.getElementById('root');
 const root = createRoot(rootContainer);
 
 root.render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<Provider store={store}>
 			<ThemeProvider theme={theme}>
 				<BrowserRouter>
@@ -22,5 +22,5 @@ root.render(
 				</BrowserRouter>
 			</ThemeProvider>
 		</Provider>
-	</React.StrictMode>,
+	// </React.StrictMode>,
 );
