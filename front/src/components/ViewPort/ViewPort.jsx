@@ -4,7 +4,6 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import _, { memoize } from 'lodash';
 
 const ViewPort = () => {
     const mountRef = useRef(null);
@@ -69,8 +68,10 @@ const ViewPort = () => {
             scene.add(mesh);
             mesh.geometry.center();
 
+            let animateId;
+
             const animate = function () {
-                requestAnimationFrame(animate);
+                animateId = requestAnimationFrame(animate);
                 mesh.rotation.x = -Math.PI / 2;
                 mesh.rotation.z += 0.01;
                 renderer.render(scene, camera);
@@ -80,18 +81,25 @@ const ViewPort = () => {
 
             camera.position.z = 340;
 
+            console.log('getRender', renderer);
             return () => {
-                scene.clear()
+                cancelAnimationFrame(animateId);
+                console.log('unmount scene', scene);
                 mesh.geometry.dispose();
                 mesh.material.dispose();
-                scene.dispose();
                 renderer.dispose();
+                scene.clear();
+
                 mountRef?.current?.removeChild(renderer.domElement);
             };
         }
     }, [buffer, model.id]);
 
-    return <div ref={mountRef} />;
+    return (
+        <>
+            <div ref={mountRef} />
+        </>
+    );
 };
 
 export default ViewPort;
