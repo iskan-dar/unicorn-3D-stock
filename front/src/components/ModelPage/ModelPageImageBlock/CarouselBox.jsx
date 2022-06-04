@@ -6,13 +6,29 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Container, Box, IconButton, Stack, Typography } from '@mui/material';
 import MainPhoto from './MainPhoto';
+import { style } from '@mui/system';
 
 export default function ModelPageImageBlock() {
     const [mainPhotoLink, setMainPhotoLink] = useState('');
     const model = useSelector((store) => store.model);
+    const [value, setValue] = useState(0);
 
     const photosArr = model['Photos.photoUrl'];
     const previewLink = model['PreviewModels.previewModelLink'];
+
+    const moveBehind = () => {
+        console.log('mB',value, photosArr.length);
+        value >= 0
+            ? setValue(0)
+            : setValue(value + 115)
+    };
+    const moveAhead = () => {
+        console.log('mA',value, photosArr.length);
+        console.log(photosArr.length * -100)
+        value <= (photosArr.length - 5) * -115
+            ? setValue(-115 * (photosArr.length - 5))
+            : setValue(value - 115);
+    };
 
     useEffect(() => {
         if (photosArr?.length) {
@@ -45,16 +61,22 @@ export default function ModelPageImageBlock() {
             <Box component="div" className={styles.modelPageCarouselBox}>
                 {/* КНОПКА НАЗАД */}
                 <IconButton
-                    className={styles.modelPageCarouselBtn}
-                    // onClick={}
+                    // className={styles.modelPageCarouselBtn}
+                    id="moveBehind"
+                    onClick={moveBehind}
                 >
                     <ArrowBackIosNewIcon />
                 </IconButton>
 
-                <Stack direction="row" alignItems="center" spacing={2}>
+                <Stack className={styles.arr} direction="row" alignItems="center" spacing={2}>
                     {photosArr?.length
                         ? photosArr.map((el) => (
-                              <Box key={el} onClick={(e) => changeMainPhoto(e)}>
+                              <Box
+                                  key={el}
+                                  className="glide"
+                                  style={{ transform: `translateX(${value}%)` }}
+                                  onClick={(e) => changeMainPhoto(e)}
+                              >
                                   <img
                                       style={{
                                           width: '105px',
@@ -72,8 +94,9 @@ export default function ModelPageImageBlock() {
 
                 {/* КНОПКА ВПЕРЕД */}
                 <IconButton
-                    className={styles.modelPageCarouselBtn}
-                    // onClick={}
+                    // className={styles.modelPageCarouselBtn}
+                    id="moveAhead"
+                    onClick={moveAhead}
                 >
                     <ArrowForwardIosIcon />
                 </IconButton>

@@ -81,10 +81,8 @@ const ViewPort = () => {
 
             camera.position.z = 340;
 
-            console.log('getRender', renderer);
             return () => {
                 cancelAnimationFrame(animateId);
-                console.log('unmount scene', scene);
                 mesh.geometry.dispose();
                 mesh.material.dispose();
                 renderer.dispose();

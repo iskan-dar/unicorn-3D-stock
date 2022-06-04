@@ -72,11 +72,31 @@
 }
 
 .modelPageCarouselBox {
-	width: 100%;
+	/* width: 300px;
 	height: 102px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center; */
+	width: 80%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	display: flex;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.glide {
+	min-width: 15%;
+	height: auto;
+	transition: 0.5s;
+	padding: 25px 0 0 0;
+  }
+
+.arr {
+	width: 800px;
+	overflow: hidden;
 }
 
 .modelPageDescriptionTitle {
@@ -139,3 +159,29 @@
 	padding: 23px;
 	border-radius: 12px;
 }
+
+#moveBehind {
+	position: absolute;
+	background: #fff;
+	top: 30%;
+	left: 0;
+	transform: translateY(-48%);
+	width: 2%;
+	background-color: #333333d4;
+	border-radius: 50%;
+	height: 30px;
+	color: white;
+  }
+
+#moveAhead {
+	position: absolute;
+	background: #fff;
+	top: 30%;
+	margin-left: 140px;
+	transform: translateY(-48%);
+	width: 2%;
+	background-color: #333333d4;
+	border-radius: 50%;
+	height: 30px;
+	color: white;
+  }
